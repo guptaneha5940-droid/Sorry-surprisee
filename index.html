@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Something for My Dil Ka Tukda 💗</title>
+<style>
+  :root{--pink:#ff8eae;--deep:#8b365b;--cream:#fff8f5;--lilac:#d9caff;--ink:#51364b}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:"Trebuchet MS",system-ui,sans-serif;color:var(--ink);background:linear-gradient(135deg,#ffe3ec,#fff8f1 48%,#eee7ff);overflow-x:hidden}
+  .floaters{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+  .floater{position:absolute;bottom:-50px;animation:rise linear infinite;opacity:.65}
+  @keyframes rise{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+  .wrap{position:relative;z-index:1;max-width:900px;margin:auto;padding:22px 15px 50px}
+  .hero{text-align:center;padding:55px 20px 35px;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .tag{display:inline-block;background:#ffffffb8;border:1px solid #ffd0df;border-radius:99px;padding:8px 15px;font-size:.85rem;letter-spacing:.06em}
+  h1{font-family:Georgia,serif;font-weight:normal;font-size:clamp(2.2rem,7vw,4.3rem);line-height:1.08;margin:20px 0 12px;color:#8f3f63}
+  h1 span{display:block;font-style:italic;color:#d95e8c}
+  .subtitle{font-size:1.05rem;max-width:540px;line-height:1.7;margin:0 auto}
+  .tiny-heart{color:#e76b98;font-size:1.5rem;margin-top:15px;animation:pulse 1.4s infinite}
+  @keyframes pulse{50%{transform:scale(1.25)}}
+  .card{background:#ffffffd9;border:1px solid #fff;box-shadow:0 15px 45px #a95d7b20;border-radius:26px;padding:25px;margin:18px 0;backdrop-filter:blur(8px)}
+  .envelope-area{text-align:center;padding:30px 15px 35px}
+  .envelope{position:relative;width:min(310px,85vw);height:190px;margin:25px auto 15px;cursor:pointer;border:0;background:transparent;display:block;perspective:800px}
+  .env-back{position:absolute;inset:15px 0 0;background:#f8a6bd;border-radius:8px;box-shadow:0 12px 22px #b45b7d2b}
+  .env-front{position:absolute;inset:15px 0 0;background:#ffc1d0;clip-path:polygon(0 0,50% 60%,100% 0,100% 100%,0 100%);border-radius:8px}
+  .env-flap{position:absolute;top:15px;left:0;width:100%;height:125px;background:#ffabc2;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .8s;z-index:3}
+  .seal{position:absolute;z-index:4;left:50%;top:105px;transform:translateX(-50%);font-size:35px;transition:opacity .3s}
+  .env-label{position:absolute;z-index:5;top:55px;left:0;width:100%;font-family:Georgia,serif;font-size:1.25rem;color:#7f3154}
+  .envelope.open .env-flap{transform:rotateX(180deg);z-index:0}
+  .envelope.open .seal{opacity:0}
+  .hint{font-size:.9rem;color:#99627c}
+  .letter{display:none;background:#fffaf7;border:2px dashed #f3a4bd;border-radius:20px;padding:25px 22px;text-align:left;line-height:1.85;white-space:pre-wrap;animation:pop .5s ease}
+  .letter.show{display:block}
+  @keyframes pop{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+  .letter h2{text-align:center;font-family:Georgia,serif;font-weight:normal;color:#c64f80;margin-top:0}
+  .section-title{text-align:center;font-family:Georgia,serif;font-weight:normal;font-size:clamp(1.6rem,5vw,2.2rem);color:#914263;margin:0 0 12px}
+  .funny{text-align:center;background:linear-gradient(135deg,#fff0f5,#f4edff)}
+  .speech{display:inline-block;background:white;border-radius:20px;padding:14px 17px;margin:8px;box-shadow:0 5px 15px #ad70901a;max-width:250px}
+  .reasons{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+  .reason{background:#fff7fa;border-radius:17px;padding:16px;border:1px solid #ffe0ea}
+  .reason b{color:#b84d79}
+  .buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin:22px 0 8px}
+  .btn{border:0;border-radius:16px;padding:14px 18px;font-size:1rem;font-weight:700;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 6px 0 #00000010}
+  .btn:hover{transform:translateY(-3px)}
+  .yes{background:#ffb2ca;color:#71304e}.no{background:#d8ccff;color:#514075}
+  #reaction{min-height:55px;text-align:center;font-size:1.08rem;line-height:1.6;padding:10px;color:#9a3e68}
+  .ending{text-align:center;background:linear-gradient(135deg,#ffe0e9,#f1eaff);padding:35px 25px}
+  .ending p{line-height:1.8;max-width:600px;margin:12px auto}
+  footer{text-align:center;font-size:.85rem;padding:18px;color:#9c7186}
+  @media(max-width:520px){.card{padding:19px;border-radius:21px}.hero{padding-top:35px}.letter{padding:19px 16px}.btn{width:100%;max-width:300px}}
+</style>
+</head>
+<body>
+<div class="floaters" id="floaters"></div>
+<main class="wrap">
+  <header class="hero">
+    <div class="tag">A TINY APOLOGY, WITH A LOT OF LOVE 🎀</div>
+    <h1>A little something<br>for my <span>Dil Ka Tukda...</span></h1>
+    <p class="subtitle">Kisi khaas ke liye, jisse manaye bina dil ko sukoon nahi mil raha. 🥹💗</p>
+    <div class="tiny-heart">♡ ♥ ♡</div>
+  </header>
+
+  <section class="card envelope-area">
+    <h2 class="section-title">Ek chhota sa letter... 💌</h2>
+    <p>Warning: andar thodi si nautanki aur bahut saara pyaar hai. 😭</p>
+    <button class="envelope" id="envelope" aria-label="Open the apology letter" onclick="openLetter()">
+      <span class="env-back"></span><span class="env-flap"></span><span class="env-front"></span>
+      <span class="env-label">Open it...<br>(pleaseee 🥺)</span><span class="seal">💗</span>
+    </button>
+    <div class="hint" id="hint">Tap the envelope to read what's in my heart ♡</div>
+    <article class="letter" id="letter">
+      <h2>To my Dil Ka Tukda, ♡</h2>
+      <div id="exactMessage">Aree yrr sorry yrrr ...I don't know  if it was my mistake or not or what all the stuff..but if you felt hurt or became sad because of me .. it's my responsibility to make you happy and felt notice ... If you think it was my mistake then definitely it would be ..I am really very very sorry..ab maan bhi jaooo yrrr ...bachche ki jaan logi kyaaa🥹😭</div>
+      <p style="text-align:right;margin-bottom:0;color:#b6537b">— Teri bestie, hamesha ♡</p>
+    </article>
+  </section>
+
+  <section class="card funny">
+    <h2 class="section-title">Thoda serious... thoda funny... 😭💗</h2>
+    <div class="speech">4 din se gussa? Itni lambi punishment toh criminals ko bhi nahi milti 😭</div>
+    <div class="speech">Main: maturely sorry bolungi.<br>Also me: bachche ki jaan logi kyaaa 🥹</div>
+    <div class="speech">Official application to get my bestie privileges back, please. 📝🎀</div>
+    <p>Besties ka gussa bhi pyaar jaisa hota hai... bas thoda zyada dramatic. 😂🩷</p>
+  </section>
+
+  <section class="card">
+    <h2 class="section-title">Why you mean so much to me... 💞</h2>
+    <div class="reasons">
+      <div class="reason">🌷 <b>My comfort person</b><br>Tum ho toh normal din bhi thoda better lagta hai.</div>
+      <div class="reason">🫶 <b>My favourite human</b><br>Tumhari bakwaas, tumhari hasi, tera gussa—sab apna sa hai.</div>
+      <div class="reason">🎀 <b>My partner in chaos</b><br>Humari dosti mein thodi pagalpan ki jagah toh banti hai.</div>
+      <div class="reason">💗 <b>My Dil Ka Tukda</b><br>Ek misunderstanding ya narazgi se tum mere liye kam important nahi ho jaati.</div>
+    </div>
+  </section>
+
+  <section class="card" style="text-align:center">
+    <h2 class="section-title">Ab bataaa... 🥹</h2>
+    <p>Apni is pagal bestie ko ek chhota sa chance milega? 🫂</p>
+    <div class="buttons">
+      <button class="btn yes" onclick="forgive()">Achha theek hai... maaf kiya ♡</button>
+      <button class="btn no" onclick="stillMad()">Abhi bhi gussa hoon 😤</button>
+    </div>
+    <div id="reaction" aria-live="polite"></div>
+  </section>
+
+  <section class="card ending">
+    <div style="font-size:2.5rem">🌷🫂🌷</div>
+    <h2 class="section-title">Same team. Same madness. Always besties.</h2>
+    <p>Chahe kabhi narazgi ho jaaye, tum meri life ka ek bahut special part hai. Main perfect bestie nahi hoon, par tumhari feelings mere liye matter karti hain. I’m sorry, and I really hope we can talk it out when you’re ready. 💗</p>
+    <p><b>Take your time, meri pyaari si bestie. Love you loads. ♡</b></p>
+  </section>
+  <footer>Made with extra pyaar, thodi si nautanki & unlimited hearts 💗</footer>
+</main>
+<script>
+  const floaterBox = document.getElementById('floaters');
+  const symbols = ['♡','♥','✿','🎀','💗','✨'];
+  for(let i=0;i<22;i++){
+    const el=document.createElement('span');
+    el.className='floater';
+    el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    el.style.left=Math.random()*100+'%';
+    el.style.animationDuration=(9+Math.random()*13)+'s';
+    el.style.animationDelay=(-Math.random()*18)+'s';
+    el.style.fontSize=(14+Math.random()*19)+'px';
+    floaterBox.appendChild(el);
+  }
+  function openLetter(){
+    document.getElementById('envelope').classList.add('open');
+    document.getElementById('letter').classList.add('show');
+    document.getElementById('hint').textContent='Letter opened... ab pyaar se padhna 🥹💌';
+    document.getElementById('letter').scrollIntoView({behavior:'smooth',block:'center'});
+  }
+  function forgive(){
+    document.getElementById('reaction').innerHTML='AAAAA THANK YOUUU 😭💗🫂<br>Virtual jhappi incominggg! Ab thoda sa smile kar do, pleaseee 🎀';
+    burstHearts();
+  }
+  function stillMad(){
+    document.getElementById('reaction').innerHTML='Theek hai yaar, gussa hone ka haq hai 🥺💗<br>Main yahin hoon jab tum baat karne ke liye ready ho. Ek virtual teddy filhaal 🧸';
+    burstHearts();
+  }
+  function burstHearts(){
+    for(let i=0;i<14;i++){
+      const el=document.createElement('span');
+      el.textContent=['💗','💖','💕','✨'][Math.floor(Math.random()*4)];
+      el.style.cssText=`position:fixed;left:${20+Math.random()*60}%;top:${40+Math.random()*35}%;font-size:${18+Math.random()*18}px;z-index:99;pointer-events:none;transition:all 1.5s ease;`;
+      document.body.appendChild(el);
+      requestAnimationFrame(()=>{el.style.transform=`translate(${(Math.random()-.5)*180}px,-${80+Math.random()*160}px) rotate(${Math.random()*50}deg)`;el.style.opacity='0'});
+      setTimeout(()=>el.remove(),1600);
+    }
+  }
+</script>
+</body>
+</html>
